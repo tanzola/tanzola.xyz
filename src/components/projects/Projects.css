@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crete+Round:ital@1&display=swap');
+
+.title_projects {
+	font-family: 'Crete Round', serif;
+	font-weight: 400;
+	margin: auto;
+    padding: 15px 0 40px 0;
+    font-size: 65px;
+    color: white;
+	text-align: center;
+}
+
+.thumb_section {
+	display: flex;
+	flex-flow: row wrap;
+	max-width: 1080px;
+	margin: auto;
+	/* color: var(--bg-color); */
+	justify-content: center;
+}

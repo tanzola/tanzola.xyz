@@ -1,0 +1,48 @@
+.thumb_container {
+	display: flex;
+	flex-flow: row wrap;
+	align-content: flex-start;
+	margin: 0px;
+	cursor: pointer;
+	background: var(--bg-color);
+	justify-content: center;
+	position: relative;
+	text-align: center;
+}
+
+.overlay-full {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	transition: .3s ease;
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+.thumb_container:hover .overlay-full {
+	opacity: 1;
+}
+
+.thumb_img {
+	margin: auto;
+	opacity: 1;
+}
+
+.thumb_text {
+	color: white;
+	font-weight: 400;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	opacity: 1;
+}
+
+.thumb_text p {
+	color: white;
+	text-align: center;
+}

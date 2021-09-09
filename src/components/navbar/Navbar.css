@@ -1,0 +1,82 @@
+ header {
+	position: sticky;
+	top: 0;
+	background-color: var(--primary-color);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: var(--header-padding) var(--header-padding);
+	-webkit-user-select: none; /* Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+/Edge */
+	user-select: none; /* Standard */
+	z-index: 5000;
+ }
+
+.logo {
+	color: white;
+	cursor: pointer;
+	padding: 5px;
+	-webkit-user-select: none; /* Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+/Edge */
+	user-select: none; /* Standard */
+}
+
+.material-icons {
+	color: var(--text-white);
+	font-size: 30px;
+	cursor: pointer;
+}
+
+.navbar {
+	list-style: none;
+	display: flex;
+}
+
+.navbar li {
+	display: inline;
+	padding: 15px 17px;
+}
+
+.navbar li:hover {
+	color: var(--secondary-color);
+}
+
+.sidebar-icon {
+	height: fit-content;
+	padding-left: 5px;
+	padding-right: 5px;
+	-webkit-user-select: none; /* Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+/Edge */
+	user-select: none; /* Standard */
+}
+
+.sidebar {
+	--toggle: 1;
+	transition: all 0.125s ease-in-out;
+	visibility: visible;  /* anim */
+	opacity: 1;  /* anim */
+
+	position: fixed;
+	right: 0;
+	width: 100vw;
+	padding: 0 5px;	
+	background-color: rgba(1, 0, 0, 0.85);
+	height: 200px;
+	z-index: 4000;
+}
+
+.sidebar {
+	text-align: center;
+}
+
+.sidebar li {
+	padding: 22px;
+	list-style: none;
+}
+
+.sidebar li:hover {
+	color: var(--secondary-color);
+}
