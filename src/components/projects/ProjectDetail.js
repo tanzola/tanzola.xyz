@@ -58,16 +58,16 @@ function ProjectDetail({ match }) {
                 <div className="separator">
                     {download_links.length
                         ? <div className="tabs_container">
-                            <button className={toggleState === 1 ? "tabs active-tabs" : "tabs"} onClick={() => toggleTab(1)}>files</button>
-                            <button className={toggleState === 2 ? "tabs active-tabs" : "tabs"} onClick={() => toggleTab(2)}>info</button>
+                            <button className={toggleState === 1 ? "tabs active-tabs" : "tabs"} onClick={() => toggleTab(1)}>Files</button>
+                            <button className={toggleState === 2 ? "tabs active-tabs" : "tabs"} onClick={() => toggleTab(2)}>Info</button>
                         </div>
-                        : <div style={{ height: 21 + 'px'}}></div>}  {/*##HC*/}
+                        : <div style={{ height: 21 + 'px' }}></div>}  {/*##HC*/}
                 </div>
                 <div className="content-tabs">
                     <div className={toggleState === 1 ? "content active-content" : "content"}>{download_links}</div>
                     <div className={toggleState === 2 ? "content active-content" : "content"}><p>{detail.desc}</p></div>
                 </div>
-                <div style={{height: "40px"}}></div>
+                <div style={{ height: "40px" }}></div>
             </div>
         </>
     )

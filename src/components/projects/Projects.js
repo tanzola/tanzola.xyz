@@ -33,9 +33,7 @@ function Projects() {
 	return (
 		<>
 			<section className="thumb_section">
-				{projects.map(project => (
-					<ThumbLink name={project.name} width={thumb_width} key={project.name} />
-				))}
+				{projects.map(project => (<ThumbLink name={project.name} width={thumb_width} key={project.name} />))}
 			</section>
 		</>
 	);
