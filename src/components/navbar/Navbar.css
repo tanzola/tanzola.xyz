@@ -2,16 +2,21 @@
 	position: sticky;
 	top: 0;
 	background-color: var(--primary-color);
+	z-index: 5000;
+ }
+
+.nav-container {
 	display: flex;
 	justify-content: space-between;
+	margin: auto;
 	align-items: center;
 	padding: var(--header-padding) var(--header-padding);
 	-webkit-user-select: none; /* Safari */        
 	-moz-user-select: none; /* Firefox */
 	-ms-user-select: none; /* IE10+/Edge */
 	user-select: none; /* Standard */
-	z-index: 5000;
- }
+	/* max-width: 1080px; */
+}
 
 .logo {
 	color: white;
@@ -37,6 +42,9 @@
 .navbar li {
 	display: inline;
 	padding: 15px 17px;
+	color: white;
+	transition-property: all;
+	transition-duration: var(--speed-fast);
 }
 
 .navbar li:hover {
@@ -55,13 +63,13 @@
 
 .sidebar {
 	--toggle: 1;
-	transition: all 0.125s ease-in-out;
 	visibility: visible;  /* anim */
 	opacity: 1;  /* anim */
 
 	position: fixed;
 	right: 0;
 	width: 100vw;
+	max-width: 1080px;
 	padding: 0 5px;	
 	background-color: rgba(1, 0, 0, 0.85);
 	height: 200px;

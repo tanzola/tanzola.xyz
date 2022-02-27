@@ -29,11 +29,12 @@ const projects = [  // details.js
 function Projects() {
 	const width = useWindowWidth();
 	const sw = useScrollbarSize()['width'];  // not dynamic - custom scrollbar?
-	const thumb_width = width > 560 ? clamp(width / 2 - sw / 2, 0, 540) : width - sw;  // ##HC
 	return (
 		<>
 			<section className="thumb_section">
-				{projects.map(project => (<ThumbLink name={project.name} width={thumb_width} key={project.name} />))}
+				{projects.map(project => (
+					<ThumbLink name={project.name} key={project.name} />
+				))}
 			</section>
 		</>
 	);

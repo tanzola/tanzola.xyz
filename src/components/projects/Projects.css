@@ -15,8 +15,13 @@
 	display: flex;
 	flex-flow: row wrap;
 	margin: auto;
-	width: 1;
 	width: 100%;
+	max-width: 1080px;
 	/* color: var(--bg-color); */
 	justify-content: center;
+
+}
+
+.thumb {
+	width: 50vw;
 }

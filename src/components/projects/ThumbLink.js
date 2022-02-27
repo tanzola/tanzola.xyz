@@ -4,14 +4,14 @@ import './ThumbLink.css';
 
 function ThumbLink(props) {
     const detail = details[props.name];
-    const img_src = "/projects/" + detail.title + "/thumb.png";
+    const img_src = "/projects/" + detail.name + "/thumb.png";
     return (
         <Link to={`/projects/${props.name}`}>
             <div className="thumb_container">
-                <img className="thumb_img" src={img_src} alt={detail.title} style={{ width: props.width + 'px' }} />
-                <div className="overlay-full" style={{ width: props.width + 'px' }}>
+                <img className="thumb_img" src={img_src} alt={detail.title} />
+                <div className="overlay-full">
                     <div className="thumb_text">
-                        <p style={{ fontSize: props.width / 13 + 'px' }}>{detail.title}</p>
+                        <p>{detail.title}</p>
                     </div>
                 </div>
             </div>

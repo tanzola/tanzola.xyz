@@ -1,5 +1,6 @@
 export const details = {
 	"Project-A": {
+		name: "Project A",
 		title: "Project A",
 		desc: "Description",
 		downloads: [
@@ -9,6 +10,7 @@ export const details = {
 		vimeo: ""
 	},
 	"Project-B": {
+		name: "Project B",
 		title: "Project B",
 		desc: "Description",
 		downloads: [
@@ -18,24 +20,28 @@ export const details = {
 		vimeo: "597545190?h=8e38b0e515"
 	},
 	"Project-C": {
+		name: "Project C",
 		title: "Project C",
 		desc: "Description",
 		downloads: [],
 		vimeo: ""
 	},
 	"Project-D": {
+		name: "Project D",
 		title: "Project D",
 		desc: "Description",
 		downloads: [],
 		vimeo: ""
 	},
 	"Project-E": {
+		name: "Project E",
 		title: "Project E",
 		desc: "Description",
 		downloads: [],
 		vimeo: ""
 	},
 	"Project-F": {
+		name: "Project F",
 		title: "Project F",
 		desc: "Description",
 		downloads: [],

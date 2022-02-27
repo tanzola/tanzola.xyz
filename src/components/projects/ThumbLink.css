@@ -7,13 +7,14 @@
 	background: var(--bg-color);
 	justify-content: center;
 	position: relative;
-	text-align: center;
 	flex-shrink: 1;
 	flex-grow: 1;
+	width: calc(50vw - 12px);
+	max-width: 540px;
+	overflow: hidden;
 }
 
 .overlay-full {
-	position: absolute;
 	top: 0;
 	bottom: 0;
 	left: 0;
@@ -21,7 +22,8 @@
 	opacity: 0;
 	transition: .3s ease;
 	background-color: rgba(0, 0, 0, 0.2);
-	width: inherit;
+	width: 100%;
+	position: absolute;
 }
 
 .thumb_container:hover .overlay-full {
@@ -31,29 +33,46 @@
 .thumb_img {
 	margin: auto;
 	opacity: 1;
-	width: inherit;
+	width: 100%;
 	flex-shrink: 1;
 }
 
 .thumb_text {
+	display: flex;
 	color: white;
 	font-weight: 400;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
 	opacity: 1;
+	position: relative;
+	text-align: center;
+	align-content: center;
+	align-items: center;
+	margin: auto;
+	width: 75%;
+	top: 50%;
+	transform: translateY(-50%);
 }
 
 .thumb_text p {
 	color: white;
-	text-align: center;
+	font-size: 3.5vw;
+	line-height: 125%;
+	overflow: hidden;
+	margin: auto;
+	color: white;
 }
 
-.testo {
-	width: inherit;
-	height: 360px;
-	flex-shrink: 1;
-	flex-grow: 1;
-	background-color: red;
+@media (min-width: 1080px) {
+	.thumb_text p {
+		font-size: 240%;
+	}
+}
+
+@media (max-width: 560px) {
+	.thumb_container{
+		width: 100%;
+		max-width: 100%;
+	}
+	.thumb_text p {
+		font-size: 240%;
+	}
 }

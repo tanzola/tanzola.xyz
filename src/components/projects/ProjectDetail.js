@@ -29,7 +29,7 @@ function ProjectDetail({ match }) {
     let pad = clamp((vidwidth - width - sw + max_pad), 0, max_pad);
 
     const detail = details[match.params.name];
-    const img_src = "/projects/" + detail.title + "/thumb.png";
+    const img_src = "/projects/" + detail.name + "/thumb.png";
     const hero_img = <img className="hero" src={img_src} alt={detail.title} style={{ width: clampedwidth + 'px', paddingTop: max_pad - pad + 'px' }} />
     const hero_vimeo = <iframe
         className="hero"
@@ -44,7 +44,7 @@ function ProjectDetail({ match }) {
     const hero = detail.vimeo.length ? hero_vimeo : hero_img;
 
     const download_links = detail.downloads.map(element => (
-        <p key={element}><a href={"/projects/" + detail.title + "/download/" + element} download>{element}</a></p>
+        <p key={element}><a href={"/projects/" + detail.name + "/download/" + element} download>{element}</a></p>
     ));
 
     const [toggleState, setToggleState] = useState(2);
