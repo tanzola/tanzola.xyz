@@ -23,19 +23,20 @@ function ProjectDetail({ match }) {
     const clientHeight = document.getElementById('root').clientHeight;
     let sw = useScrollbarSize()['width'];
     if (clientHeight < window.innerHeight) { sw = 0; }
-    let vidwidth = 900;  // ##HC
-    let clampedwidth = clamp(vidwidth, 0, width - sw);
-    let max_pad = 25;  // ##HC
-    let pad = clamp((vidwidth - width - sw + max_pad), 0, max_pad);
+    let maxVidWidth = 900;  // ##HC
+    let clampedwidth = clamp(maxVidWidth, 0, width - sw);
+    let maxDetailPad = 15;  // ##HC
+    let pad = clamp((maxVidWidth - width - sw + maxDetailPad), 0, maxDetailPad);
 
     const detail = details[match.params.name];
     const img_src = "/projects/" + detail.name + "/thumb.png";
-    const hero_img = <img className="hero" src={img_src} alt={detail.title} style={{ width: clampedwidth + 'px', paddingTop: max_pad - pad + 'px' }} />
+    const hero_img = <img className="hero" src={img_src} alt={detail.title} style={{ width: clampedwidth + 'px', paddingTop: maxDetailPad - pad + 'px' }} />
     const hero_vimeo = <iframe
         className="hero"
-        style={{ boxSizing: "content-box", paddingTop: (max_pad - pad) + 'px' }}
+        style={{ boxSizing: "content-box", paddingTop: (maxDetailPad - pad) + 'px' }}
         src={"https://player.vimeo.com/video/" + detail.vimeo}
-        width={clampedwidth} height={clampedwidth / 16 * 9}
+        width={clampedwidth}
+        height={clampedwidth / 16 * 9}
         frameBorder="0"
         allowFullScreen
         title={detail.title}

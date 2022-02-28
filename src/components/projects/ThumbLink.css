@@ -9,7 +9,7 @@
 	position: relative;
 	flex-shrink: 1;
 	flex-grow: 1;
-	width: calc(50vw - 12px);
+	width: calc(50vw - 9px);
 	max-width: 540px;
 	overflow: hidden;
 }
@@ -20,7 +20,7 @@
 	left: 0;
 	right: 0;
 	opacity: 0;
-	transition: .3s ease;
+	transition: var(--speed-med) ease;
 	background-color: rgba(0, 0, 0, 0.2);
 	width: 100%;
 	position: absolute;
