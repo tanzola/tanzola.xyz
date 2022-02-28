@@ -42,17 +42,15 @@ function Navbar() {
     );
 
     return (
-        <div>
-            <header>
-                <div className="nav-container">
-                    <img src="/images/rt.png" alt="RT"></img>
-                    <nav className="navbar">
-                        {width < min_width ? sidebaricon : linklist}
-                    </nav>
-                </div>
-            </header>
+        <>
+            <div className="nav-header">
+                <img src="/images/rt.png" alt="RT"></img>
+                <nav className="navbar">
+                    {width < min_width ? sidebaricon : linklist}
+                </nav>
+            </div>
             {is_sidebar ? sidebar : null}
-        </div>
+        </>
     );
 }
 

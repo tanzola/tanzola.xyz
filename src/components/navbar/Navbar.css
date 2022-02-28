@@ -1,22 +1,17 @@
- header {
+.nav-header {
 	position: sticky;
 	top: 0;
 	background-color: var(--primary-color);
-	z-index: 5000;
- }
-
-.nav-container {
 	display: flex;
 	justify-content: space-between;
-	margin: auto;
 	align-items: center;
 	padding: var(--header-padding) var(--header-padding);
 	-webkit-user-select: none; /* Safari */        
 	-moz-user-select: none; /* Firefox */
 	-ms-user-select: none; /* IE10+/Edge */
 	user-select: none; /* Standard */
-	/* max-width: 1080px; */
-}
+	z-index: 5000;
+ }
 
 .logo {
 	color: white;

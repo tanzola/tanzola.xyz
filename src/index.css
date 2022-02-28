@@ -20,7 +20,7 @@
 	padding: 0;
 	font-family: 'Open Sans', sans-serif;
 	scroll-behavior: smooth;
-  }
+}
   
 body {
 	height: 100%;
@@ -33,21 +33,21 @@ body {
 	width: calc(100vw - (100vw - 100%));
 }
 
- li, a, button {
+li, a, button {
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 600;
 	font-size: 16px;
 	color: var(--text-white);
 	text-decoration: none;
- }
+}
 
- p {
+p {
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 400;
 	line-height: 20px;
 	color: var(--text-offwhite);
 	font-size: medium;
- }
+}
 
 /* Hide scrollbar for IE, 	Edge and Firefox */
 /* * {

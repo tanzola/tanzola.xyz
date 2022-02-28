@@ -19,28 +19,34 @@ function useWindowWidth() {
 }
 
 function ProjectDetail({ match }) {
+    let maxVidWidth = 900;  // ##HC
+    let maxDetailPad = 15;  // ##HC
+
     const width = useWindowWidth();
     const clientHeight = document.getElementById('root').clientHeight;
     let sw = useScrollbarSize()['width'];
     if (clientHeight < window.innerHeight) { sw = 0; }
-    let maxVidWidth = 900;  // ##HC
     let clampedwidth = clamp(maxVidWidth, 0, width - sw);
-    let maxDetailPad = 15;  // ##HC
-    let pad = clamp((maxVidWidth - width - sw + maxDetailPad), 0, maxDetailPad);
+    let detailPad= clamp((maxVidWidth - width + maxDetailPad * 4) / 4, 0, maxDetailPad);
 
     const detail = details[match.params.name];
     const img_src = "/projects/" + detail.name + "/thumb.png";
-    const hero_img = <img className="hero" src={img_src} alt={detail.title} style={{ width: clampedwidth + 'px', paddingTop: maxDetailPad - pad + 'px' }} />
+    const hero_img = <img
+        className="hero"
+        src={img_src}
+        alt={detail.title}
+        style={{ width: clampedwidth + 'px', paddingTop: maxDetailPad - detailPad + 'px' }}
+    />
     const hero_vimeo = <iframe
         className="hero"
-        style={{ boxSizing: "content-box", paddingTop: (maxDetailPad - pad) + 'px' }}
+        style={{ boxSizing: "content-box", paddingTop: ((maxDetailPad - detailPad) * 1.5) + 'px' }}
         src={"https://player.vimeo.com/video/" + detail.vimeo}
         width={clampedwidth}
         height={clampedwidth / 16 * 9}
         frameBorder="0"
         allowFullScreen
         title={detail.title}
-    ></iframe>
+    />
 
     const hero = detail.vimeo.length ? hero_vimeo : hero_img;
 
@@ -54,7 +60,7 @@ function ProjectDetail({ match }) {
     return (
         <>
             <div className="hero_container">{hero}</div>
-            <div className="detail_container" style={{ width: clampedwidth + 'px', paddingLeft: pad + 'px', paddingRight: pad + 'px' }}>
+            <div className="detail_container" style={{ width: clampedwidth + 'px', paddingLeft: detailPad+ 'px', paddingRight: detailPad+ 'px' }}>
                 <div><h1 className="title_project">{detail.title}</h1></div>
                 <div className="separator">
                     {download_links.length
