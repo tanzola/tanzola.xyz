@@ -22,34 +22,54 @@ function Navbar() {
     const min_width = 560;  // ##HC
     const width = useWindowWidth();
 
-    let [is_sidebar, setSidebar] = useState(false);
-    if (is_sidebar && width >= min_width) { setSidebar(false); }
-    function toggleSidebar() { setSidebar(!is_sidebar) };
+    let [isSidebar, setSidebar] = useState(false);
+    if (isSidebar && width >= min_width) { setSidebar(false); }
+    function toggleSidebar() {
+        let sb = document.getElementById("sidebar");
+        sb.style.transitionProperty = "transform, opacity";
+        setSidebar(!isSidebar) 
+    };
+    function snapOffSidebar() {
+        let sb = document.getElementById("sidebar");
+        sb.style.transitionProperty = "none";
+        setSidebar(false);
+    }
 
-    const navlinks = links.map((link) => (
-        <NavLink to={link.path} key={link.name}>
-            <li onClick={toggleSidebar}>{link.name}</li>
-        </NavLink>
+    const navbarLinks = links.map((link) => (
+        <div key={link.name} className="navbar-item">
+            <NavLink to={link.path}>
+                {link.name}
+            </NavLink>
+        </div>
     ));
 
-    let linklist = <ul>{navlinks}</ul>;
-    let sidebar = <aside><ul className="sidebar">{navlinks}</ul></aside>;
-    let sidebaricon = (
-        <div className="sidebar-icon">
-            <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"></link>
-            <i className="material-icons" id="menu-icon" onClick={toggleSidebar}>menu</i>
+    const sidebarLinks = links.map((link) => (
+        <div key={link.name} className="sb-item">
+            <NavLink to={link.path} onClick={snapOffSidebar}>
+                {link.name}
+            </NavLink>
         </div>
+    ));
+
+    let sidebar = (
+        <aside id="sidebar" className={isSidebar ? "sb sb-open" : "sb sb-closed"}>
+            <ul className="sb-list">{sidebarLinks}</ul>
+        </aside>
     );
 
     return (
         <>
-            <div className="nav-header">
+            <header className="nav-header">
                 <img src="/images/rt.png" alt="RT"></img>
-                <nav className="navbar">
-                    {width < min_width ? sidebaricon : linklist}
-                </nav>
-            </div>
-            {is_sidebar ? sidebar : null}
+                {width > min_width
+                    ? <ul className="navbar-list">{navbarLinks}</ul>
+                    : <div className="sb-icon">
+                        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"></link>
+                        <i className="material-icons" id="menu-icon" onClick={toggleSidebar}>menu</i>
+                    </div>
+                }
+            </header>
+            {sidebar}
         </>
     );
 }

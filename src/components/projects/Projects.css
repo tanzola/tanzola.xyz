@@ -1,6 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital@1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Crete+Round:ital@1&display=swap');
 
+.wrapper_header_projects {
+    margin: auto;
+    align-content: center;
+	width: fit-content;
+
+	margin-bottom: 40px;
+    border-bottom: 1px solid grey;
+}
+
+.header_projects {
+	font-family: 'Crete Round', serif;
+	font-weight: 400;
+	margin: auto;
+	margin-bottom: 7px;
+    padding: 15px 0 0 0;
+    font-size: 40px;
+    color: white;
+	text-align: center;
+}
+
 .title_projects {
 	font-family: 'Crete Round', serif;
 	font-weight: 400;
@@ -17,9 +37,7 @@
 	margin: auto;
 	width: 100%;
 	max-width: 1080px;
-	/* color: var(--bg-color); */
 	justify-content: center;
-
 }
 
 .thumb {

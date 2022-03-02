@@ -4,9 +4,8 @@ import './About.css';
 function About() {
     return (
         <>
-            <div className="container_hello">
+            <div className="wrapper_hello">
                 <h1 className="hello">Hello!</h1>
-
             </div>
         </>
     );

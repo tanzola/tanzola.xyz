@@ -9,8 +9,7 @@
 	position: relative;
 	flex-shrink: 1;
 	flex-grow: 1;
-	width: calc(50vw - 9px);
-	max-width: 540px;
+	width: 50%;
 	overflow: hidden;
 }
 

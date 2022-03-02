@@ -1,21 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import useScrollbarSize from 'react-scrollbar-size';
+import React from 'react';
 import ThumbLink from './ThumbLink.js';
 import './Projects.css';
-
-function clamp(num, min, max) {
-	return Math.min(Math.max(num, min), max);
-}
-
-function useWindowWidth() {
-	const [width, setSize] = useState(window.innerWidth);
-	useEffect(() => {
-		const handleResize = () => { setSize(window.innerWidth); }
-		window.addEventListener('resize', handleResize);
-		return () => { window.removeEventListener('resize', handleResize); }
-	}, []);
-	return width;
-}
 
 const projects = [  // details.js
 	{ name: "Project-A" },
@@ -27,8 +12,6 @@ const projects = [  // details.js
 ];
 
 function Projects() {
-	const width = useWindowWidth();
-	const sw = useScrollbarSize()['width'];  // not dynamic - custom scrollbar?
 	return (
 		<>
 			<section className="thumb_section">

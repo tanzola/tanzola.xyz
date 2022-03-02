@@ -6,13 +6,11 @@ function ThumbLink(props) {
     const detail = details[props.name];
     const img_src = "/projects/" + detail.name + "/thumb.png";
     return (
-        <Link to={`/projects/${props.name}`}>
-            <div className="thumb_container">
-                <img className="thumb_img" src={img_src} alt={detail.title} />
-                <div className="overlay-full">
-                    <div className="thumb_text">
-                        <p>{detail.title}</p>
-                    </div>
+        <Link to={`/projects/${props.name}`} className="thumb_container">
+            <img className="thumb_img" src={img_src} alt={detail.title} />
+            <div className="overlay-full">
+                <div className="thumb_text">
+                    <p>{detail.title}</p>
                 </div>
             </div>
         </Link>

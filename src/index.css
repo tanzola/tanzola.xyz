@@ -3,15 +3,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
 
 :root {
-	--header-padding: 12px;
+	--navbar-height: 50px;
 	--bg-color: black;
 	--primary-color: #000000; /*558259*/
 	--secondary-color: yellow;
 	--text-white: white;
 	--text-offwhite: #c9c9c9;
 	--text-black: black;
-	--speed-fast: 0.15s;
+	--speed-fast: 0.2s;
 	--speed-med: 0.3s;
+	--speed-slow: 0.45s;
+	--delay-offset: 0.2s;
 }
 
 *, *::before, *::after {

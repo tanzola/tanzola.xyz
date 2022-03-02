@@ -1,19 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital@1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Crete+Round:ital@1&display=swap');
 
-.container_hello {
+.wrapper_hello {
     margin: auto;
     align-content: center;
     max-width: 560px;
+    padding: 15px 0 0 0;
+    border-bottom: 1px solid grey;
 }
 
 .hello {
 	font-family: 'Crete Round', serif;
 	font-weight: 400;
 	margin: auto;
-    padding: 15px 0 0 0;
     font-size: 65px;
     color: white;
 	text-align: left;
-    border-bottom: 1px solid grey;
 }
