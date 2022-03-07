@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import useScrollbarSize from 'react-scrollbar-size';
 import { details } from './data/details.js';
 // import Vimeo from '@u-wave/react-vimeo';
 import './ProjectDetail.css';
@@ -23,10 +22,7 @@ function ProjectDetail({ match }) {
     let maxDetailPad = 15;  // ##HC
 
     const width = useWindowWidth();
-    const clientHeight = document.getElementById('root').clientHeight;
-    let sw = useScrollbarSize()['width'];
-    if (clientHeight < window.innerHeight) { sw = 0; }
-    let clampedwidth = clamp(maxVidWidth, 0, width - sw);
+    let clampedwidth = clamp(maxVidWidth, 0, width);
     let detailPad= clamp((maxVidWidth - width + maxDetailPad * 4) / 4, 0, maxDetailPad);
 
     const detail = details[match.params.name];
@@ -41,7 +37,7 @@ function ProjectDetail({ match }) {
         className="hero"
         style={{ boxSizing: "content-box", paddingTop: ((maxDetailPad - detailPad) * 1.5) + 'px' }}
         src={"https://player.vimeo.com/video/" + detail.vimeo}
-        width={clampedwidth}
+        width={"100%"}
         height={clampedwidth / 16 * 9}
         frameBorder="0"
         allowFullScreen

@@ -4,7 +4,8 @@
 .wrapper_hello {
     margin: auto;
     align-content: center;
-    max-width: 560px;
+    width: 480px;
+    max-width: 80vw;
     padding: 15px 0 0 0;
     border-bottom: 1px solid grey;
 }
@@ -13,7 +14,7 @@
 	font-family: 'Crete Round', serif;
 	font-weight: 400;
 	margin: auto;
-    font-size: 65px;
+    font-size: 46px;
     color: white;
 	text-align: left;
 }
