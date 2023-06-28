@@ -1,54 +1,167 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+@font-face {
+    font-family: "PoliteType";
+    src: url("../src/fonts/PoliteType-Regular.ttf") format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Work Sans";
+    src: url("../src/fonts/WorkSans-Light.ttf") format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Karla";
+    src: url("../src/fonts/Karla.ttf") format('truetype');
+    font-style: normal;
+}
+@font-face {
+    font-family: "Oakes Grotesk";
+    src: url("../src/fonts/OakesGroteskRegular.ttf") format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Space Grotesk";
+    src: url("../src/fonts/SpaceGrotesk.ttf") format('truetype');
+    font-style: normal;
+}
+@font-face {
+    font-family: "Gangster Grotesk";
+    src: url("../src/fonts/GangsterGrotesk-Regular.otf") format('opentype');
+    font-style: normal;
+}
+@font-face {
+    font-family: "Undeka";
+    src: url("../src/fonts/Undeka-Regular.woff") format('woff');
+    font-style: normal;
+}
+@font-face {
+    font-family: "Neue Alte";
+    src: url("../src/fonts/NeueAlteGrotesk-Medium.ttf") format('truetype');
+    font-style: normal;
+}
+
+@keyframes slideInFromRight {
+	0% {
+		transform: translateX(2rem);
+		opacity: 0%;
+	}
+	80% {
+		transform: translateX(0.075rem);
+		opacity: 100%;
+	}
+	100% {
+		transform: translateX(0);
+		opacity: 100%;
+	}
+}
+
+@keyframes slideInFromBottom {
+	0% {
+		transform: translateY(2rem);
+		opacity: 0%;
+	}
+	10% {
+		opacity: 0%;
+	}
+	80% {
+		transform: translateY(0.075rem);
+		opacity: 90%;
+	}
+	100% {
+		transform: translateY(0);
+		opacity: 100%;
+	}
+}
+
+@keyframes bounceInFromBottom {
+	0% {
+		transform: translateY(3rem);
+		opacity: 0%;
+	}
+	50% {
+		transform: translateY(-0.2rem);
+	}
+	75% {
+		transform: translateY(0.05rem);
+		opacity: 100%;
+	}
+	100% {
+		transform: translateY(0rem);
+	}
+}
 
 :root {
-	--navbar-height: 50px;
-	--bg-color: black;
-	--primary-color: #000000; /*558259*/
-	--secondary-color: yellow;
-	--text-white: white;
-	--text-offwhite: #c9c9c9;
-	--text-black: black;
+	--font-primary: "Neue Alte";
+	--font-primary-style: sans-serif;
+	--font-primary-weight: 400;
+	
+	--font-secondary: "Karla";
+	--font-secondary-style: sans-serif;
+	--font-secondary-weight: 400;
+
+	--font-size: 1rem;
+
+	--bg-color: #ededed;
+	--font-color-headline: #222222;
+	--font-color-link: yellow;
+	--font-color-body: black;
+	--color-highlight: #ff5757;
+	--border-color: #383838;
+	--border-secondary-color: #3d3d3d;
+
 	--speed-fast: 0.2s;
 	--speed-med: 0.3s;
 	--speed-slow: 0.45s;
 	--delay-offset: 0.2s;
+	--page-border-width: 1.62rem;
+	--cubid: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+	--navbar-height: clamp(3.25rem, 8vw, 3.75rem);
+	
+    font-family: var(--font-secondary), var(--font-secondary-style);
+    font-weight: var(--font-secondary-weight);
 }
 
 *, *::before, *::after {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-	font-family: 'Open Sans', sans-serif;
-	scroll-behavior: smooth;
 }
   
 body {
 	height: 100%;
 	margin: 0;
-	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-	'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-	sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
 	width: calc(100vw - (100vw - 100%));
+	background-color: var(--bg-color);
 }
 
-li, a, button {
-	font-family: 'Open Sans', sans-serif;
-	font-weight: 600;
-	font-size: 16px;
+li, button {
 	color: var(--text-white);
 	text-decoration: none;
+	font-size: var(--font-size);
 }
 
-p {
-	font-family: 'Open Sans', sans-serif;
-	font-weight: 400;
-	line-height: 20px;
+p, a {
+	line-height: 1.15rem;
 	color: var(--text-offwhite);
-	font-size: medium;
+	text-decoration: none;
+	font-size: var(--font-size);
+}
+
+.bg-page {
+	height: 100vh;
+	background-color: var(--bg-color);
+}
+
+.bg-content {
+	height: auto;
+	background-color: var(--bg-color);
+}
+
+.underline {
+    border-bottom: 1px solid var(--border-color);
 }
 
 /* Hide scrollbar for IE, 	Edge and Firefox */

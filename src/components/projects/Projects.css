@@ -1,45 +1,57 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital@1&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Crete+Round:ital@1&display=swap');
 
-.wrapper_header_projects {
+:root {
+	--projects-thumb-width: clamp(0vw, 45.5vw, 40rem);
+	--projects-thumb-grid-gap: calc(var(--projects-thumb-width) / 25);
+}
+
+.wrapper_h_projects {
+	background-color: var(--bg-color);
+	z-index: 0;
     margin: auto;
-    align-content: center;
-	width: fit-content;
-
-	margin-bottom: 40px;
-    border-bottom: 1px solid grey;
+	overflow: hidden;
+	text-align: left;
+	width: calc(var(--projects-thumb-width) * 2 + var(--projects-thumb-grid-gap));
+	padding-top: clamp(calc(1rem), calc(var(--projects-thumb-width) / 15), 1000vw);
+	padding-bottom: clamp(calc(1rem / 1.5), calc(var(--projects-thumb-width) / 30), 1000vw);
 }
 
-.header_projects {
-	font-family: 'Crete Round', serif;
-	font-weight: 400;
-	margin: auto;
-	margin-bottom: 7px;
-    padding: 15px 0 0 0;
-    font-size: 40px;
-    color: white;
-	text-align: center;
+.h_projects {
+	/* animation: 0.4s ease-out 0s 1 slideInFromRight; */
+    font-family: var(--font-primary), var(--font-primary-style);
+    font-weight: var(--font-primary-weight);
+	font-size: clamp( var(--font-size) * 1.62, calc(var(--projects-thumb-width) / 7.55), 1000vw);
+
+    /* padding: 1vw 0 3vw 0; */
+    color: var(--font-color-headline);
+	/* top: 40px; */
+	/* transform: translateY(50%); */
+	
+	-webkit-user-select: none; /* Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+/Edge */
+	user-select: none; /* Standard */
 }
 
-.title_projects {
-	font-family: 'Crete Round', serif;
-	font-weight: 400;
-	margin: auto;
-    padding: 15px 0 40px 0;
-    font-size: 65px;
-    color: white;
-	text-align: center;
-}
-
-.thumb_section {
-	display: flex;
-	flex-flow: row wrap;
-	margin: auto;
+.proj-grid-wrapper {
 	width: 100%;
-	max-width: 1080px;
-	justify-content: center;
+	height: 100%;
+	position: relative;
+	top: clamp(1rem, calc(var(--projects-thumb-width) / 15), 1000vw);
 }
 
-.thumb {
-	width: 50vw;
+.proj-grid {
+	display: grid;
+	width: fit-content;
+	margin-left: auto;
+	margin-right: auto;
+	grid-template-columns: repeat(2, var(--projects-thumb-width));  /* Thumblink Size */
+	grid-template-rows: repeat(3, calc(var(--projects-thumb-width) / 16 * 9));
+	gap: var(--projects-thumb-grid-gap);
+}
+
+@media only screen and (min-width: 1400px) {
+	.h_projects {
+		/* font-size: 112px; */
+		/* top: 0px; */
+	}
 }

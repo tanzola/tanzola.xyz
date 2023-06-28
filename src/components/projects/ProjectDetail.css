@@ -1,5 +1,4 @@
-
-.hero_container {
+.hero-container {
 	display: flex;
     margin: auto;
     justify-content: center;
@@ -11,95 +10,90 @@
 
 .hero {
     padding-bottom: 10px;
+    max-width: 100%;
 }
 
-.detail_container {
+.detail-container {
     margin: auto;
+    max-width: 100%;
 }
 
-.title_project {
-	font-family: 'Noto Serif', serif;
-    font-family: 'Crete Round', serif;
-	font-weight: 400;
-    padding-top: 10px;
+.title-project {
+    font-family: var(--font-primary), var(--font-primary-style);
+    font-weight: var(--font-primary-weight);
+    padding-top: 20px;
     padding-bottom: 5px;
-    font-size: 46px;
-    color: white;
+    /* font-size: 2.875rem; */
+    font-size: clamp(var(--font-size) * 1.62, calc(var(--projects-thumb-width) / 11.16), 1000vw);
+    font-size: 2.875rem;
 }
 
 .separator {
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid var(--border-color);
 }
 
-.tabs_container {
+.tab-buttons {
     display: flex;
     justify-content: right;
 }
 
-.bloc-tabs {
-    display: flex;
-}
-
-.tabs {
+.tab {
     border-style: solid;
-    padding: 0.5px;
+    padding: 1px;
     text-align: center;
     width: 60px;
-    color: #777;
-    background: rgba(128, 128, 128, 0.075);
+    color: var(--border-color);
     cursor: pointer;
     box-sizing: content-box;
     position: relative;
     border-width: 1px;
-    border-color: grey;
+    border-color: var(--border-color);
     border-bottom: none;
-    font-size: 14px;
+    background-color: var(--bg-color);
+    font-family: var(--font-secondary);
+    font-size: var(--font-size);
 }
 
-.tabs:not(:last-child){
+.tab:not(:last-child){
     border-right: none;
 }
 
-.active-tabs  {
-    color: white;
-}
-
-.line {
-    color: #777;
-    border-bottom: 1px solid rgba(255,255,255,1);
+.active-tab  {
+    color: var(--color-highlight);
 }
 
 .info{
    margin-top: 20px;
 }
 
-.content-tabs {
+.tab-content {
     flex-grow : 1;
-  }
+}
 
 .content {
     width: 100%;
     height: 100%;
     display: none;
 }
-.content h2 {
-    color: white;
-    padding: 0px 0 5px 0px;
-}
-.content hr {
-    width: 100px;
-    height: 2px;
-    background: #222;
-    margin-bottom: 5px;
-}
+
 .content p {
-    padding-top: 20px;
+    padding-top: 1.25rem;
     width: 100%;
     height: 100%;
 }
+
 .active-content {
     display: block;
 }
 
 @media screen and (max-width: 560px) {
+    .title-project {
+        font-size: 8vw;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .title-project {
+        font-size: 36px;
+    }
 }

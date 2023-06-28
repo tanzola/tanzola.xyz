@@ -4,11 +4,12 @@ import Navbar from './components/navbar/Navbar.js';
 import Projects from './components/projects/Projects.js';
 import ProjectDetail from './components/projects/ProjectDetail.js';
 import About from './components/about/About.js';
+import './App.css'
 
 function App() {
     return (
-        <div style={{ height: '100vh', backgroundColor: 'black' }}>
-            <div style={{ height: 'auto', backgroundColor: 'black' }}>
+        <div className="bg-page">
+            <div className="bg-content">
                 <React.StrictMode>
                     <Router>
                         <Navbar />
