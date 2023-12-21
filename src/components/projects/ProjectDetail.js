@@ -47,7 +47,7 @@ function ProjectDetail({ match }) {
     const hero = detail.vimeo.length ? heroVimeo : heroImage;
 
     const downloadLinks = detail.downloads.map(element => (
-        <p key={element}><a href={"/projects/" + detail.name + "/download/" + element} download>{element}</a></p>
+        <p key={element}><a href={"/projects/" + detail.name + "/download/" + element} download={element}>{element}</a></p>
     ));
 
     const [toggleState, setToggleState] = useState(2);
@@ -61,8 +61,8 @@ function ProjectDetail({ match }) {
                 <div className="separator">
                     {downloadLinks.length
                         ? <div className="tab-buttons">
-                            <button className={toggleState === 1 ? "tab active-tab" : "tab"} onClick={() => toggleTab(1)}>Files</button>
                             <button className={toggleState === 2 ? "tab active-tab" : "tab"} onClick={() => toggleTab(2)}>Info</button>
+                            <button className={toggleState === 1 ? "tab active-tab" : "tab"} onClick={() => toggleTab(1)}>Files</button>
                         </div>
                         : <div style={{ height: 21 + 'px' }}></div>}  {/*##HC*/}
                 </div>

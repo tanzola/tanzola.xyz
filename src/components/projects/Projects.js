@@ -23,7 +23,7 @@ function Projects() {
 						<ThumbLink
 							index={index}
 							project={project}
-							name={project.name}
+							name={project.title}
 							key={project.name}
 						/>
 					))}

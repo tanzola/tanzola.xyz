@@ -21,13 +21,14 @@
 	height: 100%;
 	display: flex;
 	flex-direction: row;
+	margin-right: calc(var(--page-border-width) - var(--navbar-item-padding-x));
 }
 
 .navbar-item {
 	height: 100%;
 	display: flex;
 	align-items: center;
-	padding: 0 0 0 1.5rem;
+	padding: 0 var(--navbar-item-padding-x);
 	color: var(--font-color-headline);
 	cursor: pointer;
 	transition-property: all;
@@ -45,7 +46,7 @@
 }
 
 .navbar-item:last-child {
-	margin-right: var(--page-border-width);
+	/* margin-right: var(--page-border-width); */
 }
 
 .logo {

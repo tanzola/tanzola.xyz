@@ -8,10 +8,10 @@ const links = [
     { name: "About", path: "/about" }
 ];
 
-function Navbar() {
-    
+function Navbar(props) {
+    //  onClick={() => { props.setPageState(link.path) }}
     const navbarLinks = links.map((link) => (
-        <div key={link.name} className="navbar-item">
+        <div key={link.name} className="navbar-item" >
             <NavLink to={link.path}>
                 {link.name}
             </NavLink>

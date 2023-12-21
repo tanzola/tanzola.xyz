@@ -4,7 +4,7 @@ import './ThumbLink.css';
 
 function ThumbLink(props) {
     const detail = details[props.project.name];
-    const img_src = "/projects/" + detail.title + "/thumb.png";
+    const img_src = "/projects/" + detail.name + "/thumb.png";
     const anim = {};
     return (
         <Link to={`/projects/${detail.name}`} className="thumb_container">
