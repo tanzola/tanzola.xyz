@@ -118,7 +118,7 @@
 	--page-border-width: 1.62rem;
 	--cubid: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
-	--navbar-height: clamp(3.25rem, 8vw, 3.75rem);
+	--navbar-height: clamp(3.25rem, 8vw, 5rem);
 	--navbar-item-padding-x: 0.75rem;
 	
     font-family: var(--font-secondary), var(--font-secondary-style);

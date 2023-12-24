@@ -26,7 +26,7 @@ function ProjectDetail({ match }) {
     let detailPad = clamp((maxVidWidth - width + maxDetailPad * 4) / 4, 0, maxDetailPad);
 
     const detail = details[match.params.name];
-    const imgSource = "/projects/" + detail.title + "/thumb.png";
+    const imgSource = "/projects/" + detail.name + "/thumb.png";
     const heroImage = <img
         className="hero"
         src={imgSource}

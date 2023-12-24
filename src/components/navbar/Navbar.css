@@ -45,10 +45,6 @@
 	font-size: var(--font-size);
 }
 
-.navbar-item:last-child {
-	/* margin-right: var(--page-border-width); */
-}
-
 .logo {
 	fill: #222222;  /* #HC var(--font-color-headline)) */
 	cursor: pointer;
