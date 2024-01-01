@@ -2,7 +2,7 @@
 	--thumblink-overlay-text-size: clamp(var(--font-size), 3.25vw, calc(var(--font-size) * 2.62));
 }
 
-.thumb_overlay_text {
+.thumb-overlay-text {
 	transition: all 0.25s ease;
 	transition-timing-function: var(--cubic);
 	opacity: 100%;
@@ -12,30 +12,30 @@
 	bottom: 0px;
 	padding-left: calc(var(--thumblink-overlay-text-size) * 0.5);
 	padding-right: calc(var(--thumblink-overlay-text-size) * 0.5);
-	padding-bottom: calc(var(--thumblink-overlay-text-size) * 0.6 * 0.25);
 	font-size: var(--thumblink-overlay-text-size);
 	line-height: calc(var(--thumblink-overlay-text-size) * 1.2);
 	-webkit-user-select: none; /* Safari */        
 	-moz-user-select: none; /* Firefox */
 	-ms-user-select: none; /* IE10+/Edge */
 	user-select: none; /* Standard */
+	/* font-family: "Neue Alte Book", var(--font-primary-style); */
 }
 
-.thumb_overlay {
+.thumb-overlay {
 	z-index: 2;
 	transition: all 0.3s ease;
 	position: absolute;
 	width: 100%;
 	height: 100%;
 	opacity: 0%;
-	background-color: rgba(0,0,0,0.075);
+	background-color: rgba(0,0,0,0.1);
 }
 
-.thumb_overlay:hover {
+.thumb-overlay:hover {
 	opacity: 100%;
 }
 
-.thumb_container {
+.thumb-container {
 	/* animation: 0.4s ease-out 0s 1 slideInFromRight; */
 	display: flex;
 	flex-flow: row wrap;
@@ -47,7 +47,7 @@
 	flex-shrink: 1;
 	flex-grow: 1;
 	width: 100%;
-	height: auto;
+	height: 100%;
 	overflow: hidden;
 	transition-property: all;
 	transition-duration: var(--speed-fast);
@@ -57,16 +57,16 @@
 		opacity: 100%;
 	}
 
-	&:hover .thumb_overlay_text {
-		padding-bottom: calc(var(--thumblink-overlay-text-size) * 0.6);
+	&:hover .thumb-overlay-text {
+		padding-bottom: calc(var(--thumblink-overlay-text-size) * 0.5);
 	}
 	
-	&:hover .thumb_img {
+	&:hover .thumb-img {
 		scale: 1.05;
 	}
 }
 
-.thumb_img {
+.thumb-img {
 	transition: all 0.5s ease;
 	transition-timing-function: var(--cubic);
 	margin: auto;

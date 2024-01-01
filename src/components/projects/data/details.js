@@ -3,9 +3,18 @@ export const details = {
 		name: "Project-A",
 		title: "Project A",
 		desc: "Description",
-		downloads: [
-			"project A_01.txt",
-			"project A_02.txt"
+		files: [
+			{
+				key: "file1",
+				name: "project A_01.txt",
+				desc: "desc\ndesc\n\ndesc"
+					+ "\nhello"
+			},
+			{
+				key: "file2",
+				name: "project A_02.txt",
+				desc: "desc"
+			}
 		],
 		vimeo: ""
 	},
@@ -13,9 +22,17 @@ export const details = {
 		name: "Project-B",
 		title: "Project B",
 		desc: "Description",
-		downloads: [
-			"project B_01.txt",
-			"project B_02.txt"
+		files: [
+			{
+				key: "file1",
+				name: "project B_01.txt",
+				desc: "desc"
+			},
+			{
+				key: "file2",
+				name: "project B_02.txt",
+				desc: "desc"
+			}
 		],
 		vimeo: "597545190?h=8e38b0e515"
 	},
@@ -23,28 +40,28 @@ export const details = {
 		name: "Project-C",
 		title: "Project C",
 		desc: "Description",
-		downloads: [],
+		files: [],
 		vimeo: ""
 	},
 	"Project-D": {
 		name: "Project-D",
 		title: "Project D",
 		desc: "Description",
-		downloads: [],
+		files: [],
 		vimeo: ""
 	},
 	"Project-E": {
 		name: "Project-E",
 		title: "Project E",
 		desc: "Description",
-		downloads: [],
+		files: [],
 		vimeo: ""
 	},
 	"Project-F": {
 		name: "Project-F",
 		title: "Project F",
 		desc: "Description",
-		downloads: [],
+		files: [],
 		vimeo: ""
 	},
 };

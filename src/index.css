@@ -1,43 +1,17 @@
 @font-face {
-    font-family: "PoliteType";
-    src: url("../src/fonts/PoliteType-Regular.ttf") format('truetype');
-    font-weight: bold;
-    font-style: normal;
-}
-@font-face {
-    font-family: "Work Sans";
-    src: url("../src/fonts/WorkSans-Light.ttf") format('truetype');
-    font-weight: bold;
-    font-style: normal;
-}
-@font-face {
     font-family: "Karla";
     src: url("../src/fonts/Karla.ttf") format('truetype');
     font-style: normal;
 }
+
 @font-face {
-    font-family: "Oakes Grotesk";
-    src: url("../src/fonts/OakesGroteskRegular.ttf") format('truetype');
-    font-weight: 400;
+    font-family: "Neue Alte Book";
+    src: url("../src/fonts/NeueAlteGrotesk-Book.ttf") format('truetype');
     font-style: normal;
 }
+
 @font-face {
-    font-family: "Space Grotesk";
-    src: url("../src/fonts/SpaceGrotesk.ttf") format('truetype');
-    font-style: normal;
-}
-@font-face {
-    font-family: "Gangster Grotesk";
-    src: url("../src/fonts/GangsterGrotesk-Regular.otf") format('opentype');
-    font-style: normal;
-}
-@font-face {
-    font-family: "Undeka";
-    src: url("../src/fonts/Undeka-Regular.woff") format('woff');
-    font-style: normal;
-}
-@font-face {
-    font-family: "Neue Alte";
+    font-family: "Neue Alte Medium";
     src: url("../src/fonts/NeueAlteGrotesk-Medium.ttf") format('truetype');
     font-style: normal;
 }
@@ -93,7 +67,9 @@
 }
 
 :root {
-	--font-primary: "Neue Alte";
+	--font-size: 1rem;
+	
+	--font-primary: "Neue Alte Medium";
 	--font-primary-style: sans-serif;
 	--font-primary-weight: 400;
 	
@@ -101,13 +77,25 @@
 	--font-secondary-style: sans-serif;
 	--font-secondary-weight: 400;
 
-	--font-size: 1rem;
+    font-family: var(--font-secondary), var(--font-secondary-style);
+    font-weight: var(--font-secondary-weight);
+
+	--page-border-width: 1.5rem;
+	--page-width: calc(100vw - var(--page-border-width) * 2);
+	--page-max-width: 80rem;  /* put to media queries */
+
+	--header-padding-top: 3rem;
+	--header-padding-bottom: 2rem;
+
+	--footer-height: 5rem;
 
 	--bg-color: #ededed;
+	/* --bg-color: rgb(200, 200, 200); */
 	--font-color-headline: #222222;
 	--font-color-link: yellow;
 	--font-color-body: black;
-	--color-highlight: #ff5757;
+	/* --color-highlight: #ff5757; */
+	--color-highlight: #48b354;
 	--border-color: #383838;
 	--border-secondary-color: #3d3d3d;
 
@@ -115,14 +103,21 @@
 	--speed-med: 0.3s;
 	--speed-slow: 0.45s;
 	--delay-offset: 0.2s;
-	--page-border-width: 1.62rem;
-	--cubid: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	--cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
-	--navbar-height: clamp(3.25rem, 8vw, 5rem);
+	--navbar-height: clamp(4rem, 8vw, 4rem);
 	--navbar-item-padding-x: 0.75rem;
-	
-    font-family: var(--font-secondary), var(--font-secondary-style);
-    font-weight: var(--font-secondary-weight);
+
+	--headline-padding-top:clamp(
+		calc(var(--page-max-width) / 120),
+		calc(var(--page-width) / 30),
+		calc(var(--page-max-width) / 30)
+	);
+	--headline-padding-bottom: clamp(
+		calc(var(--page-max-width) / 140),
+		calc(var(--page-width) / 35),
+		calc(var(--page-max-width) / 35)
+	);
 }
 
 *, *::before, *::after {
@@ -132,8 +127,8 @@
 }
   
 body {
-	height: 100%;
-	margin: 0;
+	display: block;
+	flex-direction: none;
 	width: calc(100vw - (100vw - 100%));
 	background-color: var(--bg-color);
 }
@@ -151,18 +146,75 @@ p, a {
 	font-size: var(--font-size);
 }
 
-.bg-page {
-	height: 100vh;
-	background-color: var(--bg-color);
+.flex-page {
+    display: flex;
+    flex-direction: column;
+	min-height: 100vh;
 }
 
-.bg-content {
-	height: auto;
-	background-color: var(--bg-color);
+.page-wrapper {
+	display: block;
+}
+
+.headline-wrapper {
+	z-index: 0;
+    margin: auto;
+	overflow: hidden;
+	text-align: left;
+	width: var(--page-width);
+	max-width: var(--page-max-width);
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: var(--headline-padding-top);
+	padding-bottom: var(--headline-padding-bottom);
+}
+
+.headline {
+	/* animation: 0.4s ease-out 0s 1 slideInFromBottom; */
+    font-family: var(--font-primary), var(--font-primary-style);
+    font-weight: var(--font-primary-weight);
+	font-size: clamp(
+		var(--font-size) * 2,
+		calc(var(--page-width) / 15),
+		calc(var(--page-max-width) / 15)
+	);
+    color: var(--font-color-headline);	
+	-webkit-user-select: none; /* Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+/Edge */
+	user-select: none; /* Standard */
+}
+
+.content {
+	padding-top: clamp(
+		calc(var(--page-max-width) / 120),
+		calc(var(--page-width) / 30),
+		calc(var(--page-max-width) / 30)
+	);
 }
 
 .underline {
     border-bottom: 1px solid var(--border-color);
+}
+
+.guideline-right {
+	position: absolute;
+	width: 1px;
+	height: 100%;
+	background-color: red;
+	z-index: 5001;
+	right: var(--page-border-width);
+
+}
+
+.guideline-left {
+	position: absolute;
+	width: 1px;
+	height: 100%;
+	background-color: red;
+	z-index: 5001;
+	left: var(--page-border-width);
+
 }
 
 /* Hide scrollbar for IE, 	Edge and Firefox */

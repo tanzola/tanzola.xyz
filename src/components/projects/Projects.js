@@ -14,10 +14,10 @@ const projects = [  // details.js
 function Projects() {
 	return (
 		<>
-			<div className="wrapper_h_projects underline">
-				<h1 className="h_projects slideInLeft">Projects</h1>
+			<div className="headline-wrapper underline">
+				<h1 className="headline slideInLeft">Projects</h1>
 			</div>
-			<section className="proj-grid-wrapper">
+			<section className="proj-grid-wrapper content">
 				<div className="proj-grid">
 					{projects.map((project, index) => (
 						<ThumbLink

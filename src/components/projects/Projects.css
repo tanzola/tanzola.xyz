@@ -1,42 +1,18 @@
 
 :root {
-	--projects-thumb-width: clamp(0vw, 45.5vw, 40rem);
-	--projects-thumb-grid-gap: calc(var(--projects-thumb-width) / 25);
-}
-
-.wrapper_h_projects {
-	background-color: var(--bg-color);
-	z-index: 0;
-    margin: auto;
-	overflow: hidden;
-	text-align: left;
-	width: calc(var(--projects-thumb-width) * 2 + var(--projects-thumb-grid-gap));
-	padding-top: clamp(calc(1rem), calc(var(--projects-thumb-width) / 15), 1000vw);
-	padding-bottom: clamp(calc(1rem / 1.5), calc(var(--projects-thumb-width) / 30), 1000vw);
-}
-
-.h_projects {
-	/* animation: 0.4s ease-out 0s 1 slideInFromRight; */
-    font-family: var(--font-primary), var(--font-primary-style);
-    font-weight: var(--font-primary-weight);
-	font-size: clamp( var(--font-size) * 1.62, calc(var(--projects-thumb-width) / 7.55), 1000vw);
-
-    /* padding: 1vw 0 3vw 0; */
-    color: var(--font-color-headline);
-	/* top: 40px; */
-	/* transform: translateY(50%); */
-	
-	-webkit-user-select: none; /* Safari */        
-	-moz-user-select: none; /* Firefox */
-	-ms-user-select: none; /* IE10+/Edge */
-	user-select: none; /* Standard */
+	--projects-thumb-width: auto;
+	--projects-thumb-grid-gap: 0rem;
 }
 
 .proj-grid-wrapper {
-	width: 100%;
+	width: var(--page-width);
+	max-width: calc(var(--page-max-width));
 	height: 100%;
 	position: relative;
-	top: clamp(1rem, calc(var(--projects-thumb-width) / 15), 1000vw);
+	margin-left: var(--page-border-width);
+	margin-right: var(--page-border-width);
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .proj-grid {
@@ -44,14 +20,24 @@
 	width: fit-content;
 	margin-left: auto;
 	margin-right: auto;
-	grid-template-columns: repeat(2, var(--projects-thumb-width));  /* Thumblink Size */
-	grid-template-rows: repeat(3, calc(var(--projects-thumb-width) / 16 * 9));
-	gap: var(--projects-thumb-grid-gap);
+	grid-template-columns: repeat(2, auto);
+	gap: clamp(
+		0.25rem,
+		calc(var(--page-width) / 55),
+		calc(var(--page-max-width) / 50)
+	);
 }
 
-@media only screen and (min-width: 1400px) {
-	.h_projects {
-		/* font-size: 112px; */
-		/* top: 0px; */
+@media only screen and (max-width: 500px) {
+	.proj-grid-wrapper {
+		/* top: var(--page-border-width); */
+	}
+	.proj-grid {
+		grid-template-columns: repeat(1, auto);
+		gap: clamp(
+			0.5rem,
+			calc(var(--page-width) / 55),
+			calc(var(--page-max-width) / 50)
+		);
 	}
 }

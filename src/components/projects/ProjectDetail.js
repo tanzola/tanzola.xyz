@@ -46,8 +46,11 @@ function ProjectDetail({ match }) {
 
     const hero = detail.vimeo.length ? heroVimeo : heroImage;
 
-    const downloadLinks = detail.downloads.map(element => (
-        <p key={element}><a href={"/projects/" + detail.name + "/download/" + element} download={element}>{element}</a></p>
+    const downloadLinks = detail.files.map(file => (
+        <div key={file.key}>
+            <p className="pd-file-dl"><a href={"/projects/" + detail.name + "/download/" + file.name} download={file.name}>{file.name}</a></p>
+            <p className="pd-file-desc">{file.desc}</p>
+        </div>
     ));
 
     const [toggleState, setToggleState] = useState(2);
@@ -58,19 +61,18 @@ function ProjectDetail({ match }) {
             <div className="hero-container">{hero}</div>
             <div className="detail-container" style={{ width: clampedwidth + 'px', paddingLeft: detailPad+ 'px', paddingRight: detailPad+ 'px' }}>
                 <div><h1 className="title-project">{detail.title}</h1></div>
-                <div className="separator">
+                <div className="pd-separator">
                     {downloadLinks.length
-                        ? <div className="tab-buttons">
-                            <button className={toggleState === 2 ? "tab active-tab" : "tab"} onClick={() => toggleTab(2)}>Info</button>
-                            <button className={toggleState === 1 ? "tab active-tab" : "tab"} onClick={() => toggleTab(1)}>Files</button>
+                        ? <div className="pd-tab-buttons">
+                            <button className={toggleState === 2 ? "pd-tab pd-active-tab" : "pd-tab"} onClick={() => toggleTab(2)}>Info</button>
+                            <button className={toggleState === 1 ? "pd-tab pd-active-tab" : "pd-tab"} onClick={() => toggleTab(1)}>Files</button>
                         </div>
                         : <div style={{ height: 21 + 'px' }}></div>}  {/*##HC*/}
                 </div>
-                <div className="tab-content">
-                    <div className={toggleState === 1 ? "content active-content" : "content"}>{downloadLinks}</div>
-                    <div className={toggleState === 2 ? "content active-content" : "content"}><p>{detail.desc}</p></div>
+                <div className="pd-tab-content">
+                    <div className={toggleState === 1 ? "pd-content pd-active-content" : "pd-content"}>{downloadLinks}</div>
+                    <div className={toggleState === 2 ? "pd-content pd-active-content" : "pd-content"}><p>{detail.desc}</p></div>
                 </div>
-                <div style={{ height: "40px" }}></div>
             </div>
         </>
     )
