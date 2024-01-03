@@ -21,9 +21,10 @@
 .title-project {
     font-family: var(--font-primary), var(--font-primary-style);
     font-weight: var(--font-primary-weight);
+    /* font-family: "Overused-Medium"; */
+    /* font-weight: 500; */
     padding-top: 1.3rem;
     padding-bottom: 0.45rem;
-    /* font-size: 2.875rem; */
     font-size: clamp(var(--font-size) * 1.62, calc(var(--projects-thumb-width) / 11.16), 1000vw);
     font-size: 2.875rem;
 }
@@ -39,19 +40,20 @@
 
 .pd-tab {
     border-style: solid;
-    padding: 1px;
     text-align: center;
-    width: 60px;
+    width: fit-content;
+    padding: 0.075rem 0.75rem;
     color: var(--border-color);
     cursor: pointer;
-    box-sizing: content-box;
-    position: relative;
-    border-width: 1px;
-    border-color: var(--border-color);
-    border-bottom: none;
-    background-color: var(--bg-color);
     font-family: var(--font-secondary);
     font-size: var(--font-size);
+    /* font-weight: 400; */
+        /* this oop for dark reader extension */
+        border-bottom: 0;  
+        border-top: 1px solid var(--border-color);
+        border-left: 1px solid var(--border-color);
+        border-right: 1px solid var(--border-color);
+    background-color: var(--bg-color);
 	-webkit-user-select: none; /* Safari */        
 	-moz-user-select: none; /* Firefox */
 	-ms-user-select: none; /* IE10+/Edge */
@@ -64,10 +66,6 @@
 
 .pd-active-tab  {
     color: var(--color-highlight);
-}
-
-.pd-info{
-   margin-top: 20px;
 }
 
 .pd-tab-content {

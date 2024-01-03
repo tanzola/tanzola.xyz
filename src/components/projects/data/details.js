@@ -1,7 +1,7 @@
 export const details = {
-	"Project-A": {
-		name: "Project-A",
-		title: "Project A",
+	"recursive-growth": {
+		name: "recursive-growth",
+		title: "Recursive Growth",
 		desc: "Description",
 		files: [
 			{

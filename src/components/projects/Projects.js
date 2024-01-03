@@ -3,7 +3,7 @@ import ThumbLink from './ThumbLink.js';
 import './Projects.css';
 
 const projects = [  // details.js
-	{ name: "Project-A" },
+	{ name: "recursive-growth" },
 	{ name: "Project-B" },
 	{ name: "Project-C" },
 	{ name: "Project-D" },
@@ -15,7 +15,7 @@ function Projects() {
 	return (
 		<>
 			<div className="headline-wrapper underline">
-				<h1 className="headline slideInLeft">Projects</h1>
+				<h1 className="headline">Projects</h1>
 			</div>
 			<section className="proj-grid-wrapper content">
 				<div className="proj-grid">

@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import './Navbar.css';
 
 const links = [
-    { name: "Home", path: "/" },
+    { name: "Reel", path: "/" },
     { name: "Projects", path: "/projects" },
     { name: "About", path: "/about" }
 ];

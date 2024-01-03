@@ -18,8 +18,8 @@ function useWindowWidth() {
 }
 
 function ProjectDetail({ match }) {
-    let maxVidWidth = 1080;  // ##HC
-    let maxDetailPad = 25;  // ##HC
+    let maxVidWidth = 1080;  // #Hardcode
+    let maxDetailPad = 25;  // #Hardcode
 
     const width = useWindowWidth();
     let clampedwidth = clamp(maxVidWidth, 0, width);
@@ -67,7 +67,7 @@ function ProjectDetail({ match }) {
                             <button className={toggleState === 2 ? "pd-tab pd-active-tab" : "pd-tab"} onClick={() => toggleTab(2)}>Info</button>
                             <button className={toggleState === 1 ? "pd-tab pd-active-tab" : "pd-tab"} onClick={() => toggleTab(1)}>Files</button>
                         </div>
-                        : <div style={{ height: 21 + 'px' }}></div>}  {/*##HC*/}
+                        : <div style={{ height: 21 + 'px' }}></div>}  {/*#Hardcode*/}
                 </div>
                 <div className="pd-tab-content">
                     <div className={toggleState === 1 ? "pd-content pd-active-content" : "pd-content"}>{downloadLinks}</div>

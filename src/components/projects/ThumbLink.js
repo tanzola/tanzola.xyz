@@ -8,7 +8,7 @@ function ThumbLink(props) {
     return (
         <Link to={`/projects/${detail.name}`} className="thumb-container">
             <div className="thumb-overlay">
-                    <p className="thumb-overlay-text">{detail.title}</p>
+                <p className="thumb-overlay-text">{detail.title}</p>
             </div>
             <img className="thumb-img" src={img_src} alt={detail.title} />
         </Link>

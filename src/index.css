@@ -16,6 +16,30 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: "Bricolage";
+    src: url("../src/fonts/BricolageGrotesque.ttf") format('truetype');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Overused-Roman";
+    src: url("../src/fonts/OverusedGrotesk-Roman.ttf") format('truetype');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Overused-Medium";
+    src: url("../src/fonts/OverusedGrotesk-Medium.ttf") format('truetype');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "AndersonGrotesk";
+    src: url("../src/fonts/AndersonGrotesk.otf") format('opentype');
+    font-style: normal;
+}
+
 @keyframes slideInFromRight {
 	0% {
 		transform: translateX(2rem);
@@ -69,10 +93,12 @@
 :root {
 	--font-size: 1rem;
 	
-	--font-primary: "Neue Alte Medium";
+	/* --font-primary: "Neue Alte Book"; */
+	--font-primary: "AndersonGrotesk";
 	--font-primary-style: sans-serif;
-	--font-primary-weight: 400;
+	--font-primary-weight: 600;
 	
+	/* --font-secondary: "Karla"; */
 	--font-secondary: "Karla";
 	--font-secondary-style: sans-serif;
 	--font-secondary-weight: 400;
@@ -87,17 +113,16 @@
 	--header-padding-top: 3rem;
 	--header-padding-bottom: 2rem;
 
-	--footer-height: 5rem;
-
 	--bg-color: #ededed;
 	/* --bg-color: rgb(200, 200, 200); */
 	--font-color-headline: #222222;
 	--font-color-link: yellow;
 	--font-color-body: black;
 	/* --color-highlight: #ff5757; */
-	--color-highlight: #48b354;
+	--color-highlight: #fe5b5b;
+	/* --color-highlight: #48b354; */
 	--border-color: #383838;
-	--border-secondary-color: #3d3d3d;
+	--footer-item-color: rgb(0, 0, 0);
 
 	--speed-fast: 0.2s;
 	--speed-med: 0.3s;
@@ -105,8 +130,10 @@
 	--delay-offset: 0.2s;
 	--cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
-	--navbar-height: clamp(4rem, 8vw, 4rem);
+	--navbar-height: 4rem;
 	--navbar-item-padding-x: 0.75rem;
+
+	--footer-height: 3.5rem;
 
 	--headline-padding-top:clamp(
 		calc(var(--page-max-width) / 120),
@@ -114,9 +141,9 @@
 		calc(var(--page-max-width) / 30)
 	);
 	--headline-padding-bottom: clamp(
-		calc(var(--page-max-width) / 140),
-		calc(var(--page-width) / 35),
-		calc(var(--page-max-width) / 35)
+		calc(var(--page-max-width) / 200),
+		calc(var(--page-width) / 50),
+		calc(var(--page-max-width) / 50)
 	);
 }
 
@@ -156,6 +183,23 @@ p, a {
 	display: block;
 }
 
+.space-bewteen {
+    display: flex;
+	justify-content: space-between;
+}
+
+.underline {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.content {
+	margin-top: clamp(
+		calc(var(--page-max-width) / 100),
+		calc(var(--page-width) / 25),
+		calc(var(--page-max-width) / 25)
+	);
+}
+
 .headline-wrapper {
 	z-index: 0;
     margin: auto;
@@ -163,8 +207,6 @@ p, a {
 	text-align: left;
 	width: var(--page-width);
 	max-width: var(--page-max-width);
-	margin-left: auto;
-	margin-right: auto;
 	padding-top: var(--headline-padding-top);
 	padding-bottom: var(--headline-padding-bottom);
 }
@@ -183,18 +225,6 @@ p, a {
 	-moz-user-select: none; /* Firefox */
 	-ms-user-select: none; /* IE10+/Edge */
 	user-select: none; /* Standard */
-}
-
-.content {
-	padding-top: clamp(
-		calc(var(--page-max-width) / 120),
-		calc(var(--page-width) / 30),
-		calc(var(--page-max-width) / 30)
-	);
-}
-
-.underline {
-    border-bottom: 1px solid var(--border-color);
 }
 
 .guideline-right {

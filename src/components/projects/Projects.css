@@ -8,9 +8,6 @@
 	width: var(--page-width);
 	max-width: calc(var(--page-max-width));
 	height: 100%;
-	position: relative;
-	margin-left: var(--page-border-width);
-	margin-right: var(--page-border-width);
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -28,10 +25,7 @@
 	);
 }
 
-@media only screen and (max-width: 500px) {
-	.proj-grid-wrapper {
-		/* top: var(--page-border-width); */
-	}
+@media only screen and (max-width: 500px) {  /* put to thumblink media queries */
 	.proj-grid {
 		grid-template-columns: repeat(1, auto);
 		gap: clamp(
