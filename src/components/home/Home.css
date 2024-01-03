@@ -7,6 +7,18 @@
     }
   }
 
+  @keyframes delayedFadeOut {
+    0% {
+        opacity: 1;
+    }
+    60% {
+       opacity: 1;
+    }
+    100% {
+       opacity: 0;
+    }
+}
+
 .reel-wrapper {
     --reel-width: clamp(
         0px,
@@ -24,11 +36,6 @@
 
 .reel {
     position: relative;
-
-    /* resize: both; */
-    /* width: 1080px;
-    height: 100%; */
-    /* margin: auto; */
 }
 
 .reel-border {
@@ -37,12 +44,13 @@
     height: calc(var(--reel-width) / 16 * 9);
     display: flex;
     justify-items: center;
-    /* overflow: hidden; */
+    /* position: absolute; */
+    overflow: hidden;
 }
 
 .reel-star {
-    animation: starRotation 50s infinite linear;
-    /* position: absolute; */
+    opacity: 0;
+    animation: starRotation 50s infinite linear, delayedFadeOut 2.5s;
     margin: auto;
     fill: rgba(0,0,0,0);
     stroke: var(--font-color-headline);

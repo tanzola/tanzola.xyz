@@ -25,7 +25,6 @@ function Home() {
 	return (
 		<>
             <div className="headline-wrapper space-bewteen">
-				{/* <h1 className="headline">Reel '22</h1> */}
 				<h1 className="headline reel-headline">Reel&nbsp;</h1>
                 <h1 className="headline reel-headline">'24</h1>                
 			</div>

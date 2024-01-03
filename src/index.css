@@ -107,7 +107,9 @@
     font-weight: var(--font-secondary-weight);
 
 	--page-border-width: 1.5rem;
-	--page-width: calc(100vw - var(--page-border-width) * 2);
+	/* adjust --page-width for scrollbar with (100vw - 100%) */
+	--page-width-noscroll: calc(100vw - var(--page-border-width) * 2);
+	--page-width: calc(100vw - (100vw - 100%) - var(--page-border-width) * 2);
 	--page-max-width: 80rem;  /* put to media queries */
 
 	--header-padding-top: 3rem;
@@ -158,6 +160,14 @@ body {
 	flex-direction: none;
 	width: calc(100vw - (100vw - 100%));
 	background-color: var(--bg-color);
+}
+
+.preload * {
+	-webkit-transition: none !important;
+	-moz-transition: none !important;
+	-ms-transition: none !important;
+	-o-transition: none !important;
+	transition: none !important;
 }
 
 li, button {
@@ -217,7 +227,7 @@ p, a {
     font-weight: var(--font-primary-weight);
 	font-size: clamp(
 		var(--font-size) * 2,
-		calc(var(--page-width) / 15),
+		calc(var(--page-width-noscroll) / 15),
 		calc(var(--page-max-width) / 15)
 	);
     color: var(--font-color-headline);	
@@ -247,13 +257,13 @@ p, a {
 
 }
 
-/* Hide scrollbar for IE, 	Edge and Firefox */
+/* Hide scrollbar for IE/Edge and Firefox */
 /* * {
-  -ms-overflow-style: none;  /* IE and Edge 
-  scrollbar-width: none;  /* Firefox 
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 } */
 
-/* Hide scrollbar for Chrome, Safari and Opera 
-*::-webkit-scrollbar {
+/* Hide scrollbar for Chrome, Safari and Opera */
+/* *::-webkit-scrollbar {
   display: none;
-/* }8 */
+} */

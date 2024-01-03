@@ -47,7 +47,7 @@
     cursor: pointer;
     font-family: var(--font-secondary);
     font-size: var(--font-size);
-    /* font-weight: 400; */
+    font-weight: 500;
         /* this oop for dark reader extension */
         border-bottom: 0;  
         border-top: 1px solid var(--border-color);
