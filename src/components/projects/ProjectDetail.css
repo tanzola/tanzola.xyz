@@ -21,26 +21,16 @@
 .title-project {
     font-family: var(--font-primary), var(--font-primary-style);
     font-weight: var(--font-primary-weight);
-    padding-top: 1.3rem;
-    padding-bottom: 0.45rem;
-    font-size: calc(clamp(2rem, 5.25vw, 4.25rem));
-    /* font-size: 2.875rem; */
-}
-
-.pd-separator {
-    /* border-bottom: 1px solid var(--border-color); */
-    /* height: fit-content; */
+    line-height: 115%;
+    padding-top: 1.25rem;
+    padding-bottom: 0.2rem;
+    font-size: calc(clamp(2.2rem, 5.25vw, 4.25rem));
 }
 
 .pd-tab-buttons {
     display: flex;
     justify-content: right;
 }
-
-.pd-separatorr {
-    border-bottom: 1px solid var(--border-color);
-}
-
 .pd-separator-line {
     height: auto;
     width: 100%;
@@ -51,18 +41,12 @@
     border-style: solid;
     text-align: center;
     width: fit-content;
-    padding: 0.1rem 0.75rem 0.05rem 0.75rem;
+    padding: 0.1rem 0.75rem 0rem 0.75rem;
     color: var(--border-color);
     cursor: pointer;
     font-family: var(--font-secondary);
-    font-size: var(--font-size);
-    font-weight: 500;
-        /* this oop for dark reader extension */
-        /* border-bottom: 0;   */
-        border-bottom: 1px solid var(--border-color);
-        border-top: 1px solid var(--border-color);
-        border-left: 1px solid var(--border-color);
-        border-right: 1px solid var(--border-color);
+    font-size: 1rem;
+    border: 1px solid var(--border-color);
     background-color: var(--bg-color);
 	-webkit-user-select: none; /* Safari */        
 	-moz-user-select: none; /* Firefox */

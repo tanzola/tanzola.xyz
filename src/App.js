@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import Navbar from './components/navbar/Navbar.js';
 import Footer from './components/footer/Footer.js';
 import Home from './components/home/Home.js';
@@ -15,12 +15,12 @@ function App() {
             {/* <div className="guideline-left" /> */}
             <Router>
                 <Navbar />
-                <Switch>
-                    <Route path="/projects/:name" component={ProjectDetail} />
-                    <Route path="/projects" exact component={Projects} />
-                    <Route path="/about" exact component={About} />
-                    <Route path="/" exact component={Home} />
-                </Switch>
+                <Routes>
+                    <Route path="/projects/:name" element={<ProjectDetail />} />
+                    <Route path="/projects" element={<Projects />} />
+                    <Route path="/about" element={<About />} />
+                    <Route path="/" element={<Home />} />
+                </Routes>
             </Router>
         </div>
         <Router>

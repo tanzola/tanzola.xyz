@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useParams} from 'react-router-dom';
 import { details } from './data/details.js';
 // import Vimeo from '@u-wave/react-vimeo';
 import './ProjectDetail.css';
@@ -17,7 +18,9 @@ function useWindowWidth() {
     return width;
 }
 
-function ProjectDetail({ match }) {
+function ProjectDetail() {
+    const params = useParams();
+
     let maxVidWidth = 1280;  // #Hardcode
     let maxDetailPad = 50;  // #Hardcode
 
@@ -25,7 +28,7 @@ function ProjectDetail({ match }) {
     let clampedwidth = clamp(maxVidWidth, 0, width);
     let detailPad = clamp((maxVidWidth - width + maxDetailPad * 4) / 4, 0, maxDetailPad);
 
-    const detail = details[match.params.name];
+    const detail = details[params.name];
     const imgSource = "/projects/" + detail.name + "/thumb.png";
     const heroImage = <img
         className="hero"
@@ -61,7 +64,7 @@ function ProjectDetail({ match }) {
             <div className="hero-container">{hero}</div>
             <div className="detail-container" style={{ width: clampedwidth + 'px', paddingLeft: detailPad / 2 + 'px', paddingRight: detailPad / 2 + 'px' }}>
                 <div><h1 className="title-project">{detail.title}</h1></div>
-                <div className="pd-separator">
+                <div>
                     {downloadLinks.length
                         ? <div className="pd-tab-buttons">
                             <div className="pd-separator-line" />

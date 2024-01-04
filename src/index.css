@@ -129,7 +129,7 @@
 
 	--bg-color: #ededed;
 	/* --bg-color: rgb(200, 200, 200); */
-	--font-color-headline: #222222;
+	--font-color-headline: #111111;
 	--font-color-link: yellow;
 	--font-color-body: black;
 	/* --color-highlight: #ff5757; */
@@ -144,7 +144,7 @@
 	--delay-offset: 0.2s;
 	--cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
-	--navbar-height: 4rem;
+	--navbar-height: 3.5rem;
 	--navbar-item-padding-x: 0.75rem;
 
 	--footer-height: 3.5rem;
@@ -189,19 +189,18 @@ li, button {
 }
 
 p, a {
-	line-height: 1rem;
+	line-height: 1.3rem;
 	color: var(--text-offwhite);
 	text-decoration: none;
 	font-size: var(--font-size);
-	line-height: 1.3rem;
 }
 
 ::selection {
 	background: #ffbbbb; /* WebKit/Blink Browsers */
-  }
+}
   
 ::-moz-selection {
-background: #ffb1b1; /* Gecko Browsers */
+	background: #ffbbbb; /* Gecko Browsers */
 }
 
 .flex-page {
@@ -251,7 +250,7 @@ background: #ffb1b1; /* Gecko Browsers */
 		calc(var(--page-width-noscroll) / 15),
 		calc(var(--page-max-width) / 15)
 	);
-    color: var(--font-color-headline);	
+    color: var(--font-color-headline);
 	-webkit-user-select: none; /* Safari */        
 	-moz-user-select: none; /* Firefox */
 	-ms-user-select: none; /* IE10+/Edge */
