@@ -35,7 +35,7 @@ function ProjectDetail({ match }) {
     />
     const heroVimeo = <iframe
         className="hero"
-        style={{ boxSizing: "content-box", paddingTop: ((maxDetailPad - detailPad) * 1.5) + 'px' }}
+        style={{ boxSizing: "content-box", paddingTop: (maxDetailPad - detailPad) + 'px' }}
         src={"https://player.vimeo.com/video/" + detail.vimeo}
         width={"100%"}
         height={clampedwidth / 16 * 9}

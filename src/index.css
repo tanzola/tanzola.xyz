@@ -196,6 +196,14 @@ p, a {
 	line-height: 1.3rem;
 }
 
+::selection {
+	background: #ffbbbb; /* WebKit/Blink Browsers */
+  }
+  
+::-moz-selection {
+background: #ffb1b1; /* Gecko Browsers */
+}
+
 .flex-page {
     display: flex;
     flex-direction: column;

@@ -51,7 +51,7 @@
     border-style: solid;
     text-align: center;
     width: fit-content;
-    padding: 0.2rem 0.75rem 0.075rem 0.75rem;
+    padding: 0.1rem 0.75rem 0.05rem 0.75rem;
     color: var(--border-color);
     cursor: pointer;
     font-family: var(--font-secondary);
