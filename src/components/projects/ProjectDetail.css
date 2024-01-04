@@ -101,13 +101,7 @@
 }
 
 @media screen and (max-width: 560px) {
-    .title-project {
-        /* font-size: 8vw; */
-    }
 }
 
 @media screen and (max-width: 450px) {
-    .title-project {
-        /* font-size: 36px; */
-    }
 }

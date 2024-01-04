@@ -40,9 +40,9 @@ const links = [
 function Navbar(props) {
     const footerLinks = links.map((link) => (
         <div key={link.name}>
-            <NavLink to={{pathname: link.path}} target="_blank" className="footer-item">
-                {link.icon ? link.icon : link.name}
-            </NavLink>
+            <a href={link.path} target="_blank" className="footer-item" rel='noopener noreferrer'>
+                {link.icon}
+            </a>
         </div>
     ));
 
