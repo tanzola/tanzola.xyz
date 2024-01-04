@@ -25,13 +25,13 @@
 	);
 }
 
-@media only screen and (max-width: 500px) {  /* put to thumblink media queries */
+@media only screen and (max-width: 660px) {  /* match Thumblink.css media queries */
 	.proj-grid {
 		grid-template-columns: repeat(1, auto);
 		gap: clamp(
 			0.5rem,
-			calc(var(--page-width) / 55),
-			calc(var(--page-max-width) / 50)
+			calc(var(--page-width) / 70),
+			calc(var(--page-max-width) / 70)
 		);
 	}
 }

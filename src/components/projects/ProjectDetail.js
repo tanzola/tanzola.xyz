@@ -18,8 +18,8 @@ function useWindowWidth() {
 }
 
 function ProjectDetail({ match }) {
-    let maxVidWidth = 1080;  // #Hardcode
-    let maxDetailPad = 25;  // #Hardcode
+    let maxVidWidth = 1280;  // #Hardcode
+    let maxDetailPad = 50;  // #Hardcode
 
     const width = useWindowWidth();
     let clampedwidth = clamp(maxVidWidth, 0, width);
@@ -59,15 +59,16 @@ function ProjectDetail({ match }) {
     return (
         <>
             <div className="hero-container">{hero}</div>
-            <div className="detail-container" style={{ width: clampedwidth + 'px', paddingLeft: detailPad+ 'px', paddingRight: detailPad+ 'px' }}>
+            <div className="detail-container" style={{ width: clampedwidth + 'px', paddingLeft: detailPad / 2 + 'px', paddingRight: detailPad / 2 + 'px' }}>
                 <div><h1 className="title-project">{detail.title}</h1></div>
                 <div className="pd-separator">
                     {downloadLinks.length
                         ? <div className="pd-tab-buttons">
+                            <div className="pd-separator-line" />
                             <button className={toggleState === 2 ? "pd-tab pd-active-tab" : "pd-tab"} onClick={() => toggleTab(2)}>Info</button>
                             <button className={toggleState === 1 ? "pd-tab pd-active-tab" : "pd-tab"} onClick={() => toggleTab(1)}>Files</button>
                         </div>
-                        : <div style={{ height: 21 + 'px' }}></div>}  {/*#Hardcode*/}
+                        : <div className="pd-separator-line" style={{ height: 1.65 + "rem" }}></div>}  {/*#Hardcode*/}
                 </div>
                 <div className="pd-tab-content">
                     <div className={toggleState === 1 ? "pd-content pd-active-content" : "pd-content"}>{downloadLinks}</div>

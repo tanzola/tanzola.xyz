@@ -35,8 +35,20 @@
 }
 
 @font-face {
+    font-family: "AndersonGrotesk-Light";
+    src: url("../src/fonts/AndersonGrotesk-Light.otf") format('opentype');
+    font-style: normal;
+}
+
+@font-face {
     font-family: "AndersonGrotesk";
     src: url("../src/fonts/AndersonGrotesk.otf") format('opentype');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "AndersonGrotesk-Bold";
+    src: url("../src/fonts/AndersonGrotesk-Bold.otf") format('opentype');
     font-style: normal;
 }
 
@@ -91,15 +103,15 @@
 }
 
 :root {
-	--font-size: 1rem;
+	--font-size: 1.1rem;
 	
 	/* --font-primary: "Neue Alte Book"; */
-	--font-primary: "AndersonGrotesk";
+	--font-primary: "AndersonGrotesk-Bold";
 	--font-primary-style: sans-serif;
-	--font-primary-weight: 600;
+	--font-primary-weight: 400;
 	
 	/* --font-secondary: "Karla"; */
-	--font-secondary: "Karla";
+	--font-secondary: "AndersonGrotesk";
 	--font-secondary-style: sans-serif;
 	--font-secondary-weight: 400;
 
@@ -177,10 +189,11 @@ li, button {
 }
 
 p, a {
-	line-height: 1.15rem;
+	line-height: 1rem;
 	color: var(--text-offwhite);
 	text-decoration: none;
 	font-size: var(--font-size);
+	line-height: 1.3rem;
 }
 
 .flex-page {
