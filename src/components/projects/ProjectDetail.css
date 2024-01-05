@@ -7,10 +7,9 @@
     -ms-user-select: none; /* IE10+/Edge */
     user-select: none; /* Standard */
 }
-
-.hero {
+.hero-container img {
     padding-bottom: 10px;  /**/
-    max-width: 100%;
+    max-width: 100%;    
 }
 
 .detail-container {
@@ -22,8 +21,16 @@
     font-family: var(--font-primary), var(--font-primary-style);
     font-weight: var(--font-primary-weight);
     line-height: 115%;
-    padding-top: 1.25rem;
-    padding-bottom: 0.2rem;
+    padding-top: clamp(
+		calc(var(--page-max-width) / 300),
+		calc(var(--page-width) / 75),
+		calc(var(--page-max-width) / 75)
+    );;
+    padding-bottom: clamp(
+		calc(var(--page-max-width) / 800),
+		calc(var(--page-width) / 200),
+		calc(var(--page-max-width) / 200)
+    );
     font-size: calc(clamp(2.2rem, 5.25vw, 4.25rem));
 }
 
@@ -87,16 +94,13 @@
     display: block;
 }
 
-.pd-file-dl {
-    font-family: var(--font-primary), var(--font-primary-style);
-    /* font-weight: 400; */
-    /* text-decoration: underline;
-    text-decoration-color: var(--color-highlight); */
+.pd-file-dl a {
+    font-family: var(--font-secondary-bold), var(--font-secondary-style);
+    font-weight: var(--font-secondary-weight);
 }
 
 .pd-file-desc{
     margin: 1.5rem;
-    margin-top: 1rem;
     white-space: pre;
 }
 

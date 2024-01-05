@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams} from 'react-router-dom';
 import { details } from './data/details.js';
-// import Vimeo from '@u-wave/react-vimeo';
 import './ProjectDetail.css';
 
 function clamp(num, min, max) {

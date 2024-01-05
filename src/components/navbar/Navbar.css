@@ -19,7 +19,6 @@
 	display: flex;
 	flex-direction: row;
 	margin-right: calc(var(--page-border-width) - var(--navbar-item-padding-x));
-	background-color: var(--bg-color);
 }
 
 .navbar-item {
@@ -40,7 +39,19 @@
 	color: var(--color-highlight);
 }
 
-.logo {
+.nav-name {
+	font-family: var(--font-primary);
+	font-weight: var(--font-primary-weight);
+	font-size: 1.4rem;
+	line-height: 1.4rem;
+	margin-left: var(--page-border-width);
+	-webkit-user-select: none; /* Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+/Edge */
+	user-select: none; /* Standard */
+}
+
+.nav-logo {
 	fill: #222222;  /* #Hardcode var(--font-color-headline)) */
 	cursor: pointer;
 	width: 1.9rem;
@@ -57,17 +68,25 @@
 }
 
 .navbar-underline-inactive {
-	transition: border 0.2s ease;
+	transition: border 0.4s ease;
 	border-bottom: solid 1px rgba(0,0,0,0);
 }
 
 .navbar-underline {
-	transition: border 0.5s ease;
+	transition: border 0.4s ease;
 	border-bottom: solid 1px rgba(0,0,0,1);
 }
 
 @media only screen and (max-width: 320px) {
 	.navbar-item a {
 		font-size: clamp(0.6rem, 5vw,var(--font-size));
+	}
+}
+
+@media only screen and (min-width: 1800px) {	
+	.nav-header {
+		transition: all 0.4s ease;
+		background-color: rgba(255, 255, 255, 0);
+		border-color: rgba(255, 255, 255, 0);
 	}
 }
