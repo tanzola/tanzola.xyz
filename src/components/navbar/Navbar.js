@@ -26,7 +26,7 @@ function Navbar() {
     window.addEventListener("scroll", (e) => setScrollPos(window.scrollY));
 
     return (
-        <header className={"nav-header " + (scrollPosY > 60 ? "navbar-underline" : "navbar-underline-inactive")}>  {/* #Hardcode */}
+        <header className={"nav-header " + (scrollPosY > 25 ? "navbar-underline" : "navbar-underline-inactive")}>  {/* #Hardcode */}
             <h1 className="nav-name">Robert Tanzola</h1>
             <ul className="navbar-list">{navbarLinks}</ul>
         </header>
