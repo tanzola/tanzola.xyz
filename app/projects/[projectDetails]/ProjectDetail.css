@@ -1,3 +1,18 @@
+/* :root {
+    --pd-max-detail-pad: 50px;
+    --pd-max-hero-width: 1280px;
+    --pd-clamped-width: calc(var(--pd-max-hero-width));
+}
+
+.hero {
+    max-width: var(--pd-max-hero-width);
+    --pd-hero-height: calc(var(--pd-max-hero-width) / 16 * 9);
+    height: var(var(--pd-hero-height));
+    height: 720px;
+    width: calc(var(--pd-hero-height) / 6 * 9);
+    box-sizing: content-box;
+} */
+
 .hero-container {
 	display: flex;
     margin: auto;
@@ -102,10 +117,4 @@
 .pd-file-desc{
     margin: 1.5rem;
     white-space: pre;
-}
-
-@media screen and (max-width: 560px) {
-}
-
-@media screen and (max-width: 450px) {
 }

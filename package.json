@@ -8,6 +8,7 @@
     "@testing-library/react": "^14.1.2",
     "@testing-library/user-event": "^14.5.2",
     "@u-wave/react-vimeo": "^0.9.10",
+    "next": "^14.0.4",
     "node": "^21.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -17,6 +18,7 @@
   },
   "scripts": {
     "start": "set PORT=3001 && react-scripts --openssl-legacy-provider start",
+    "dev": "next dev",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

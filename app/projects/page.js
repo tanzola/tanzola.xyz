@@ -1,5 +1,6 @@
+"use client";
 import React from 'react';
-import ThumbLink from './ThumbLink.js';
+import ThumbLink from '../components/thumblink/ThumbLink.js';
 import './Projects.css';
 
 const projects = [  // details.js

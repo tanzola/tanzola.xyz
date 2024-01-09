@@ -1,40 +1,4 @@
 @font-face {
-    font-family: "Karla";
-    src: url("../src/fonts/Karla.ttf") format('truetype');
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "Neue Alte Book";
-    src: url("../src/fonts/NeueAlteGrotesk-Book.ttf") format('truetype');
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "Neue Alte Medium";
-    src: url("../src/fonts/NeueAlteGrotesk-Medium.ttf") format('truetype');
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "Bricolage";
-    src: url("../src/fonts/BricolageGrotesque.ttf") format('truetype');
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "Overused-Roman";
-    src: url("../src/fonts/OverusedGrotesk-Roman.ttf") format('truetype');
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "Overused-Medium";
-    src: url("../src/fonts/OverusedGrotesk-Medium.ttf") format('truetype');
-    font-style: normal;
-}
-
-@font-face {
     font-family: "AndersonGrotesk-Light";
     src: url("../src/fonts/AndersonGrotesk-Light.otf") format('opentype');
     font-style: normal;
@@ -49,18 +13,6 @@
 @font-face {
     font-family: "AndersonGrotesk-Bold";
     src: url("../src/fonts/AndersonGrotesk-Bold.otf") format('opentype');
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "NeueHaasDisplay-Roman";
-    src: url("../src/fonts/NeueHaasDisplayRoman.ttf") format('truetype');
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "NeueHaasDisplay-Light";
-    src: url("../src/fonts/NeueHaasDisplayLight.ttf") format('truetype');
     font-style: normal;
 }
 

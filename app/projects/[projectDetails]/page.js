@@ -1,33 +1,33 @@
-import React, { useEffect, useState } from 'react';
-import { useParams} from 'react-router-dom';
+"use client";
+import { useEffect, useState } from 'react';
+import { useParams} from 'next/navigation';
 import { details } from './data/details.js';
 import './ProjectDetail.css';
+
 
 function clamp(num, min, max) {
     return Math.min(Math.max(num, min), max);
 }
 
-function useWindowWidth() {
-    const [width, setSize] = useState(window.innerWidth);
-    useEffect(() => {
-        const handleResize = () => { setSize(window.innerWidth); }
-        window.addEventListener('resize', handleResize);
-        return () => { window.removeEventListener('resize', handleResize); }
-    }, []);
-    return width;
-}
-
 function ProjectDetail() {
     const params = useParams();
+    const detail = details[params.projectDetails];
 
     let maxVidWidth = 1280;  // #Hardcode
     let maxDetailPad = 50;  // #Hardcode
 
-    const width = useWindowWidth();
+    const [width, setWidth] = useState(window.innerWidth);
+    useEffect(() => {
+        const handleResize = () => { setWidth(window.innerWidth); }
+        // window.addEventListener('load', handleResize);
+        // window.removeEventListener('load', handleResize);
+        window.addEventListener('resize', handleResize);
+        return () => { window.removeEventListener('resize', handleResize); }
+    }, []);
+
     let clampedwidth = clamp(maxVidWidth, 0, width);
     let detailPad = clamp((maxVidWidth - width + maxDetailPad * 4) / 4, 0, maxDetailPad);
 
-    const detail = details[params.name];
     const imgSource = "/projects/" + detail.name + "/thumb.png";
     const heroImage = <img
         className="hero"

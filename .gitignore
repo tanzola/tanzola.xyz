@@ -6,6 +6,7 @@
 # production
 /build
 /res
+/.next
 
 # misc
 .DS_Store

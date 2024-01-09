@@ -1,10 +1,11 @@
+"use client";
 import React from 'react';
 import './About.css';
 
 function About() {
     return (
         <>
-            <div className="headline-wrapper about underline">
+            <div className="about-headline-wrapper underline about">
                 <h1 className="headline">Hello!</h1>
             </div>
             <div className="about content">
