@@ -1,12 +1,20 @@
 "use client";
 import { useEffect, useState } from 'react';
-import { useParams} from 'next/navigation';
+import { useParams, useRouter } from 'next/navigation';
 import { details } from './data/details.js';
 import './ProjectDetail.css';
 
 function ProjectDetail() {
     const params = useParams();
     const detail = details[params.projectDetails];
+
+    if (typeof detail == 'undefined') {
+        const router = useRouter();
+        useEffect(() => {
+            router.replace("/projects");
+        });
+        return null;
+    }
 
     const imgSource = "/projects/" + detail.name + "/thumb.png";
     const heroImage = <img
