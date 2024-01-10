@@ -4,7 +4,7 @@ import styles from './Svg.module.css';
 function Svg(props) {
   return (
     <>
-      <div className={styles.footerLogo}>{props.icon}</div>
+      <div className={styles.footerLogo}>{props.icon}</div>  {/* pass styles as props */}
     </>
   )
 }

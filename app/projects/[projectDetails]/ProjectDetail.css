@@ -1,19 +1,20 @@
-/* :root {
+:root {
     --pd-max-detail-pad: 50px;
     --pd-max-hero-width: 1280px;
-    --pd-clamped-width: calc(var(--pd-max-hero-width));
+    --pd-max-hero-height: 720px;
+    --pd-detail-pad: clamp(0px, calc((var(--pd-max-hero-width) - 100vw + var(--pd-max-detail-pad) * 4) / 4), var(--pd-max-detail-pad));
 }
 
-.hero {
-    max-width: var(--pd-max-hero-width);
-    --pd-hero-height: calc(var(--pd-max-hero-width) / 16 * 9);
-    height: var(var(--pd-hero-height));
-    height: 720px;
-    width: calc(var(--pd-hero-height) / 6 * 9);
+.pd-hero {
     box-sizing: content-box;
-} */
+    max-width: var(--pd-max-hero-width);
+    max-height: var(--pd-max-hero-height);
+    width: 100vw;
+    height: 56.25vw;
+    margin-top: calc(var(--pd-max-detail-pad) - var(--pd-detail-pad));
+}
 
-.hero-container {
+.pd-hero-wrapper {
 	display: flex;
     margin: auto;
     justify-content: center;
@@ -22,25 +23,23 @@
     -ms-user-select: none; /* IE10+/Edge */
     user-select: none; /* Standard */
 }
-.hero-container img {
-    padding-bottom: 10px;  /**/
-    max-width: 100%;    
-}
-
-.detail-container {
+.pd-detail-container {
     margin: auto;
-    max-width: 100%;
+    max-width: var(--pd-max-hero-width);
+    width: 100vw;
+    padding-left: calc(var(--pd-detail-pad) / 2);
+    padding-right: calc(var(--pd-detail-pad) / 2);
 }
 
-.title-project {
+.pd-title-project {
     font-family: var(--font-primary), var(--font-primary-style);
     font-weight: var(--font-primary-weight);
     line-height: 115%;
     padding-top: clamp(
-		calc(var(--page-max-width) / 300),
-		calc(var(--page-width) / 75),
-		calc(var(--page-max-width) / 75)
-    );;
+		calc(var(--page-max-width) / 138),
+		calc(var(--page-width) / 46),
+		calc(var(--page-max-width) / 46)
+    );
     padding-bottom: clamp(
 		calc(var(--page-max-width) / 800),
 		calc(var(--page-width) / 200),
@@ -54,7 +53,7 @@
     justify-content: right;
 }
 .pd-separator-line {
-    height: auto;
+    height: 1.65rem;
     width: 100%;
     border-bottom: 1px solid var(--border-color);
 }

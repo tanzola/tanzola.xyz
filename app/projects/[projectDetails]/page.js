@@ -4,43 +4,19 @@ import { useParams} from 'next/navigation';
 import { details } from './data/details.js';
 import './ProjectDetail.css';
 
-
-function clamp(num, min, max) {
-    return Math.min(Math.max(num, min), max);
-}
-
 function ProjectDetail() {
     const params = useParams();
     const detail = details[params.projectDetails];
 
-    let maxVidWidth = 1280;  // #Hardcode
-    let maxDetailPad = 50;  // #Hardcode
-
-    const [width, setWidth] = useState(window.innerWidth);
-    useEffect(() => {
-        const handleResize = () => { setWidth(window.innerWidth); }
-        // window.addEventListener('load', handleResize);
-        // window.removeEventListener('load', handleResize);
-        window.addEventListener('resize', handleResize);
-        return () => { window.removeEventListener('resize', handleResize); }
-    }, []);
-
-    let clampedwidth = clamp(maxVidWidth, 0, width);
-    let detailPad = clamp((maxVidWidth - width + maxDetailPad * 4) / 4, 0, maxDetailPad);
-
     const imgSource = "/projects/" + detail.name + "/thumb.png";
     const heroImage = <img
-        className="hero"
+        className="pd-hero"
         src={imgSource}
         alt={detail.title}
-        style={{ width: clampedwidth + 'px', paddingTop: maxDetailPad - detailPad + 'px' }}
     />
     const heroVimeo = <iframe
-        className="hero"
-        style={{ boxSizing: "content-box", paddingTop: (maxDetailPad - detailPad) + 'px' }}
+        className="pd-hero"
         src={"https://player.vimeo.com/video/" + detail.vimeo}
-        width={"100%"}
-        height={clampedwidth / 16 * 9}
         frameBorder="0"
         allowFullScreen
         title={detail.title}
@@ -60,9 +36,9 @@ function ProjectDetail() {
 
     return (
         <>
-            <div className="hero-container">{hero}</div>
-            <div className="detail-container" style={{ width: clampedwidth + 'px', paddingLeft: detailPad / 2 + 'px', paddingRight: detailPad / 2 + 'px' }}>
-                <div><h1 className="title-project">{detail.title}</h1></div>
+            <div className="pd-hero-wrapper">{hero}</div>
+            <div className="pd-detail-container">
+                <div><h1 className="pd-title-project">{detail.title}</h1></div>
                 <div>
                     {downloadLinks.length
                         ? <div className="pd-tab-buttons">
@@ -70,7 +46,7 @@ function ProjectDetail() {
                             <button className={toggleState === 2 ? "pd-tab pd-active-tab" : "pd-tab"} onClick={() => toggleTab(2)}>Info</button>
                             <button className={toggleState === 1 ? "pd-tab pd-active-tab" : "pd-tab"} onClick={() => toggleTab(1)}>Files</button>
                         </div>
-                        : <div className="pd-separator-line" style={{ height: 1.65 + "rem" }}></div>}  {/*#Hardcode*/}
+                        : <div className="pd-separator-line" />}
                 </div>
                 <div className="pd-tab-content">
                     <div className={toggleState === 1 ? "pd-content pd-active-content" : "pd-content"}>{downloadLinks}</div>
@@ -78,7 +54,7 @@ function ProjectDetail() {
                 </div>
             </div>
         </>
-    )
+    );
 }
 
 export default ProjectDetail;
